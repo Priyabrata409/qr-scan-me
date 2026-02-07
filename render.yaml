@@ -10,11 +10,10 @@ services:
       - key: DATABASE_URL
         value: sqlite:///./backend.db
 
-  - type: static
-    name: code-assistant-frontend
-    env: static
+staticSites:
+  - name: code-assistant-frontend
     buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/dist
+    publishDir: frontend/dist
     envVars:
       - key: VITE_API_URL
         fromService:
