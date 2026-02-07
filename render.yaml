@@ -13,7 +13,7 @@ services:
 staticSites:
   - name: code-assistant-frontend
     buildCommand: cd frontend && npm install && npm run build
-    publishDir: frontend/dist
+    staticPublishPath: frontend/dist
     envVars:
       - key: VITE_API_URL
         fromService:
