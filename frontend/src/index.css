@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: var(--color-slate-50);
+    color: var(--color-slate-900);
+  }
+}
+
+/* Note: v4 uses CSS variables for theme values if enabled, or just plain CSS. 
+   If using default theme, maybe apply classes directly or use theme() function.
+   For simplicity, I'll just use the import and rely on index.html classes or defaults.
+   The previous @apply bg-slate-50 might not work without @plugin? 
+   Actually @apply works in v4.
+*/
+@theme {
+  --color-slate-50: #f8fafc;
+  --color-slate-900: #0f172a;
+  /* Add other colors if needed or rely on default palette if included */
+}
