@@ -20,4 +20,4 @@ services:
         fromService:
           type: web
           name: code-assistant-backend
-          property: url
+          property: host
