@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, UploadFile, File, HTTPException
+from os import getenv
 from typing import Optional
 from uuid import UUID
 from sqlmodel import Session, select
@@ -29,7 +30,7 @@ async def generate_blank_profile(
     
     # In a real app, you might generate a signed URL or such, 
     # but here just the ID is enough for the frontend to claim it.
-    base_url = "http://localhost:5173" # Should be env var in prod
+    base_url = getenv("FRONTEND_URL", "http://localhost:5173")
     claim_link = f"{base_url}/view/{user.id}"
     
     return {
