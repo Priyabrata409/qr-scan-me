@@ -24,8 +24,6 @@ class UserRead(BaseModel):
     email: Optional[str] = None
     contacts: List[EmergencyContactRead] = []
     is_claimed: bool = False
-    image_data: Optional[bytes] = None
-    image_content_type: Optional[str] = None
 
 class Token(BaseModel):
     access_token: str
