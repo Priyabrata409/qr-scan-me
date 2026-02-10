@@ -4,6 +4,8 @@ from os import getenv
 sqlite_url = getenv("DATABASE_URL", "sqlite:///./database.db")
 if sqlite_url.startswith("postgres://"):
     sqlite_url = sqlite_url.replace("postgres://", "postgresql://", 1)
+elif sqlite_url.startswith("postgress://"):
+    sqlite_url = sqlite_url.replace("postgress://", "postgresql://", 1)
 
 
 # Handle SQLite vs PostgreSQL connection arguments
