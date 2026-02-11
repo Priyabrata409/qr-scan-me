@@ -35,7 +35,7 @@ const Login = () => {
                 otp: otp
             });
             localStorage.setItem('token', response.data.access_token);
-            navigate('/');
+            navigate('/dashboard');
         } catch (error) {
             console.error('Verify OTP failed', error);
             setError(error.response?.data?.detail || 'Invalid OTP. Please try again.');
